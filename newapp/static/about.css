@@ -1,0 +1,250 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #495057;
+    line-height: 1.7;
+}
+
+.page-wrapper {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Hero Section */
+.hero {
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+    background-image: url('https://img.freepik.com/free-photo/top-view-desk-concept-with-laptop_23-2148236828.jpg?t=st=1743609484~exp=1743613084~hmac=a80abe3088be6166212b03a72f997ca0836ffee708c50e512b18c37484530872&w=1380'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.7); /* Slightly darken the background */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.hero .subtitle {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #e0f7fa;
+}
+
+/* Main Content Sections */
+.main-content .section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title i {
+    margin-right: 10px;
+}
+
+.section-title.inverted {
+    color: #fff;
+}
+
+.bg-light {
+    background-color: #fff;
+}
+
+.bg-accent {
+    background-color: #28a745; /* Another accent color */
+    color: #fff;
+}
+
+.bg-accent .section-title::after {
+    background-color: #fff;
+}
+
+/* Mission Section */
+.mission-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mission-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mission-text h2 {
+    text-align: left;
+}
+
+/* Features Section */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.feature-card i {
+    color: #007bff; /* Accent color */
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.6em;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #6c757d;
+}
+
+/* Team Section */
+.team-section .container {
+    max-width: 1000px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-card h3 {
+    font-size: 1.5em;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.team-member-card .role {
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.team-member-card .role i {
+    margin-right: 5px;
+}
+
+.team-member-card .bio {
+    color: #495057;
+    font-size: 0.95em;
+}
+
+/* Contact Section */
+.contact-section .container {
+    text-align: center;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.contact-info li {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.8em;
+    }
+
+    .mission-section .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .mission-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}

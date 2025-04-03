@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Students</title>
+    <link rel="stylesheet" href="{% static 'search.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'admin' %}">Home</a></li>
+                <li class="active"><a href="{% url 'search_students' %}">Search Students</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Search Students</h1>
+        <div class="search">
+        <form id="search-form" method="get" action="{% url 'search_results' %}">
+            <label for="name" class="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+            <label for="rollno" class="name">Roll No:</label>
+            <input type="text" id="rollno" name="rollno">
+            <br><br>
+            <label for="branch" class="name">Branch:</label>
+            <input type="text" id="department" name="department">
+            <br><br>
+            <button id="search-button" type="submit">Search</button>
+        </form>
+        </div>
+        <div id="search-results">
+            {% if search_results %}
+                <h2>Search Results:</h2>
+                <ul>
+                    {% for student in search_results %}
+                        <li>
+                            {{ student.first_name }} {{ student.last_name }} (Roll No: {{ student.roll_no }}, Department: {{ student.department }})
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% elif searched %}
+                <p>No students found matching your search criteria.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Student Directory</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

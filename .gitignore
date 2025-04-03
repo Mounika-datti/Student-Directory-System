@@ -1,0 +1,44 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Django
+*.log
+db.sqlite3
+/media/
+*.pot
+*.pyc
+*.pyo
+
+# Django static files
+/static/
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# MySQL Database Files
+*.sql
+*.sqlite3
+
+# Ignore secrets (you can optionally use this if you store your secrets in local files)
+secrets.json
+
+# Ignore coverage files from testing
+.coverage
+*.coveragerc

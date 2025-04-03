@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Student Directory</title>
+    <link rel="stylesheet" href="{% static 'reports.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container">
+                <h1>Reports</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <section class="report-section">
+                    <h2>Student List Report</h2>
+                    <p>View a comprehensive list of all students in the system.</p>
+                    <button class="generate-button"><i class="fas fa-list"></i> Generate Report</button>
+                    <div class="report-placeholder">
+                        </div>
+                </section>
+
+                <section class="report-section">
+                    <h2>Course Enrollment Report</h2>
+                    <p>See the number of students enrolled in each course.</p>
+                    <button class="generate-button"><i class="fas fa-chart-bar"></i> Generate Report</button>
+                    <div class="report-placeholder">
+                        </div>
+                </section>
+
+                <section class="report-section">
+                    <h2>Attendance Summary</h2>
+                    <p>Summary of student attendance records.</p>
+                    <button class="generate-button"><i class="fas fa-calendar-check"></i> Generate Report</button>
+                    <div class="report-placeholder">
+                        </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; {% now "Y" %} Student Directory Project. Generating Insights.</p>
+            </div>
+        </footer>
+        <script src="{% static 'js/reports.js' %}"></script>
+    </div>
+</body>
+</html>

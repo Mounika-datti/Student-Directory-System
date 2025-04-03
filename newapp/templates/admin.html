@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin.css' %}">
+</head>
+<body>
+    <div class="container">
+    <header class="header">
+        <a href="">Admin Dashboard</a>
+    <div class="logout">
+        <a href="{% url 'home' %}" >Logout</a>
+    </div>
+    </header>
+    <aside>
+                <ul>
+                    <li><a href="{% url 'add' %}">Add Student</a></li>
+                    <li><a href="">Delete Student</a></li>
+                    <li><a href="{% url 'student_list' %}">Student List</a></li>
+                    <li><a href="{% url 'reports_page'%}">Reports</a></li>
+                </ul>
+    </aside>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="{% static 'studentlist.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'admin' %}">Dashboard</a></li>
+                <li class="active"><a href="{% url 'student_list' %}">Students</a></li>
+                <li><a href="{% url 'reports_page'%}">Reports</a></li>
+                <li><a href="{% url 'add' %}" class="add-button"><i class="fas fa-plus-circle"></i> Add New Student</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1><i class="fas fa-graduation-cap"></i> Student List</h1>
+        {% if students %}
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                            <tr>
+                                <td>{{ student.roll_no }}</td>
+                                <td>{{ student.first_name }}</td>
+                                <td>{{ student.last_name }}</td>
+                                <td>{{ student.department }}</td>
+                                <td>{{ student.year_of_study }}</td>
+                                <td>{{ student.email }}</td>
+                                <td>{{ student.phone }}</td>
+                                <td class="actions">
+                                    <a href="{% url 'edit_student' student.roll_no %}" class="edit-button"><i class="fas fa-edit"></i> Edit</a>
+                                    <button class="delete-button" data-student-id="{{ student.roll_no }}"><i class="fas fa-trash-alt"></i> Delete</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>No students found.</p>
+        {% endif %}
+    </main>
+
+    <div id="deleteConfirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>Are you sure you want to delete student with Roll No: <span id="delete-student-id"></span>?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="confirm-button">Yes, Delete</button>
+                <button id="cancelDelete" class="cancel-button">No, Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'studentlist.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Student Directory</title>
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>About Our Student Directory</h1>
+                <p class="subtitle">Connecting Students, Simplifying Information.</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section mission-section">
+                <div class="container">
+                    <div class="mission-image">
+                        <img src="https://img.freepik.com/free-photo/about-us-information-service-sharing-join-concept_53876-124056.jpg?t=st=1743609736~exp=1743613336~hmac=e4cf95854bbba4658f70054396d773ae9170c4a1e19d52555bda90c922b4f9df&w=1480" alt="Our Mission">
+                    </div>
+                    <div class="mission-text">
+                        <h2 class="section-title"><i class="fas fa-bullseye"></i> Our Mission</h2>
+                        <p>At the heart of the Student Directory is a clear mission: to empower students by providing a central hub for information and connections. We believe a well-informed and connected student body is a stronger one.</p>
+                        <p>Our goal is to simplify the process of finding essential student details (with a strong focus on privacy), understanding academic groups, and fostering a collaborative learning environment. We strive to make student life a little easier and more connected.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section features-section bg-light">
+                <div class="container">
+                    <h2 class="section-title"><i class="fas fa-lightbulb"></i> Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-search fa-2x"></i>
+                            <h3>Effortless Search</h3>
+                            <p>Quickly find students by name, roll number, course, and more.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                            <h3>Student Profiles</h3>
+                            <p>Access relevant information about students (privacy protected).</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-list-alt fa-2x"></i>
+                            <h3>Organized Data</h3>
+                            <p>Information presented in a clear and easy-to-understand format.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-users fa-2x"></i>
+                            <h3>Connect & Collaborate</h3>
+                            <p>Facilitating connections for study groups and projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section team-section">
+                <div class="container">
+                    <h2 class="section-title"><i class="fas fa-users"></i> Meet Our Team</h2>
+                    <div class="team-grid">
+                        <div class="team-member-card">
+                            <img src="{% static 'images/team-member-1.jpg' %}" alt="[Team Member 1 Name]">
+                            <h3>[Team Member 1 Name]</h3>
+                            <p class="role"><i class="fas fa-briefcase"></i> [Your Role/Team Member 1 Role]</p>
+                            <p class="bio">[A short, engaging bio.]</p>
+                        </div>
+                        <div class="team-member-card">
+                            <img src="{% static 'images/team-member-2.jpg' %}" alt="[Team Member 2 Name]">
+                            <h3>[Team Member 2 Name]</h3>
+                            <p class="role"><i class="fas fa-briefcase"></i> [Team Member 2 Role]</p>
+                            <p class="bio">[A short, engaging bio.]</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section contact-section bg-accent">
+                <div class="container">
+                    <h2 class="section-title inverted"><i class="fas fa-envelope"></i> Connect With Us</h2>
+                    <p class="inverted">We're always eager to hear your feedback and suggestions!</p>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:[Your Contact Email]">[Your Contact Email]</a></li>
+                        <li><i class="fab fa-github"></i> <a href="[Your GitHub Link]" target="_blank">GitHub</a> (Optional)</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2025 Student Directory Project. Building connections.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

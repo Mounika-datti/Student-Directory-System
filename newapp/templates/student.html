@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'student.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="text-center mt-4">
+                        <i class="fa fa-user-circle fa-3x"></i>
+                        <h4>{{ student.name }}</h4> {# Assuming you have a 'student' object passed in the context #}
+                    </div>
+                    <ul class="nav flex-column mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'home' %}"> {# Replace 'home' with your actual URL name #}
+                                <i class="fa fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}"> {# Replace 'profile' with your actual URL name #}
+                                <i class="fa fa-user"></i> Create Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'view_profile' %}"> {# Replace 'profile' with your actual URL name #}
+                                <i class="fa fa-user"></i> View Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'edit_profile' %}"> {# Replace 'edit_profile' with your actual URL name #}
+                                <i class="fa fa-user"></i> Edit Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> {# Replace 'view_attendance' with your actual URL name #}
+                                <i class="fa fa-calendar"></i> View Attendance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> {# Replace 'view_notifications' with your actual URL name #}
+                                <i class="fa fa-bell"></i> View Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> {# Replace 'apply_leave' with your actual URL name #}
+                                <i class="fa fa-paper-plane"></i> Apply For Leave
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> {# Replace 'feedback' with your actual URL name #}
+                                <i class="fa fa-comment"></i> Feedback
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> {# Replace 'logout' with your actual URL name #}
+                                <i class="fa fa-sign-out-alt"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Student Homepage</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li> {# Replace 'home' with your actual URL name #}
+                            <li class="breadcrumb-item active" aria-current="page">Student Homepage</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <h3>{{ total_attendance }}</h3> {# Assuming you pass this in the context #}
+                                <p class="card-text">Total Attendance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h3>{{ percentage_present }}%</h3> {# Assuming you pass this in the context #}
+                                <p class="card-text">Percentage Present</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h3>{{ percentage_absent }}%</h3> {# Assuming you pass this in the context #}
+                                <p class="card-text">Percentage Absent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-warning text-dark">
+                            <div class="card-body">
+                                <h3>{{ total_subjects }}</h3> {# Assuming you pass this in the context #}
+                                <p class="card-text">Total Subject</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 's.js' %}"></script>
+</body>
+</html>

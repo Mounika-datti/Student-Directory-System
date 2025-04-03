@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .profile-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .profile-info strong {
+            font-weight: bold;
+            color: #333;
+            margin-right: 5px;
+        }
+
+        .edit-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .edit-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .edit-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Your Profile</h2>
+        <div class="profile-info">
+            <p><strong>Username:</strong> <span>{{ user.username }}</span></p>
+            <p><strong>First Name:</strong> <span>{{ user.first_name }}</span></p>
+            <p><strong>Last Name:</strong> <span>{{ user.last_name }}</span></p>
+            <p><strong>Birthday:</strong>
+                {% if user_profile.birthday %}
+                    <span>{{ user_profile.birthday }}</span>
+                {% else %}
+                    <span>Not provided</span>
+                {% endif %}
+            </p>
+            <p><strong>Location:</strong>
+                {% if user_profile.location %}
+                    <span>{{ user_profile.location }}</span>
+                {% else %}
+                    <span>Not provided</span>
+                {% endif %}
+            </p>
+        </div>
+        <div class="edit-link">
+            <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        </div>
+    </div>
+
+    <script>
+        // The data is now rendered server-side by Django,
+        // so we don't need JavaScript to populate the fields with initial data.
+
+        // Any dynamic front-end interactions (like form submissions on the
+        // "Edit Profile" page) would still use JavaScript as needed.
+    </script>
+</body>
+</html>
